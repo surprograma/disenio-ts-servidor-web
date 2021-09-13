@@ -19,7 +19,7 @@ En otras palabras: trabajen completando cada requerimiento antes de pasar al sig
 Se nos pide modelar la estructura de un servidor web que atiende **pedidos**. De cada pedido nos interesa saber:
 
 - la **dirección IP** de quien hace el pedido. Para este ejercicio se puede manejar como un `String`, por ejemplo: `"207.46.13.5"`;
-- la **fecha y hora**. Se recomienda usar para esto la clase `LocalDateTime`;
+- la **fecha y hora**. Se recomienda usar para esto la clase `DateTime` de [luxon](https://moment.github.io/luxon/#/);
 - la **URL** que se está requiriendo, por ejemplo `http://pepito.com.ar/documentos/doc1.html`.
 
 A una **URL** posteriormente va a interesar descomponerla en estos datos, que se describen tomando `"http://pepito.com.ar/documentos/doc1.html"` como ejemplo:
@@ -35,7 +35,7 @@ La respuesta a un pedido consiste de:
 - un _body_ o **contenido** que será un `String`;
 - una referencia al **pedido** que la generó.
 
-Los servidores que modelemos van a aceptar solamente el protocolo HTTP. Si el protocolo de la URL es distinto a "http" hay que devolver código de respuesta 501 (servicio no implementado). :eyes: **Ojo acá**: no se debe arrojar un error, sino que se debe devolver una respuesta con el código especificado
+Los servidores que modelemos van a aceptar solamente el protocolo HTTP. Si el protocolo de la URL es distinto a "http" hay que devolver código de respuesta 501 (servicio no implementado). :eyes: **Ojo acá**: no se debe arrojar un error, sino que se debe devolver una respuesta con el código especificado.
 
 Para este y los errores que se definen más adelante vamos a devolver body vacío y tiempo de respuesta 10 milisegundos.
 
@@ -53,7 +53,7 @@ De cada módulo se debe configurar:
 
 Cuando se recibe un pedido, ocurre lo siguiente:
 
-1. Se busca, entre los módulos, alguno que pueda responder al pedido (no importa cuál).
+1. Se busca, entre los módulos, alguno que pueda responder al pedido.
 1. Si hay alguno, se genera una respuesta con el body y el tiempo de respuesta definido por el módulo, el código de respuesta 200 (OK) y el pedido que la generó.
 1. Si no hay ningún módulo que pueda atender el pedido, se genera una respuesta con código 404 (Not found) y lo explicado más arriba sobre los errores.
 
