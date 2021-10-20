@@ -18,6 +18,7 @@
     "axios": "^0.23.0",
     "jest": "^27.0.4",
     "luxon": "^2.0.2",
+    "prompt-sync": "^4.2.0",
     "ramda": "^0.27.1",
     "source-map-support": "^0.5.19",
     "ts-jest": "^27.0.3",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@types/luxon": "^2.0.3",
+    "@types/prompt-sync": "^4.1.1",
     "@typescript-eslint/eslint-plugin": "^4.26.1",
     "@typescript-eslint/parser": "^4.26.1",
     "eslint": "^7.28.0",
