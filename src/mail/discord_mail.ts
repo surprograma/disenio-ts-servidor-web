@@ -1,5 +1,28 @@
-import { ClienteMail } from "./mail";
+import { ClienteMail } from "./cliente_mail";
 import axios, { AxiosError } from "axios";
+
+/*
+👀 ¡¡ATENCIÓN!!
+El código de este archivo *funciona* tal cual está y no debe realizarse ninguna modificación.
+Lo incluimos en el proyecto únicamente con fines didácticos, para quienes quieran ver cómo
+está hecho. El ejercicio se tiene que resolver sin alterar para nada este archivo.
+ */
+
+type DiscordMessage = {
+  embeds: DiscordEmbed[];
+};
+
+type DiscordEmbed = {
+  title: string;
+  description: string;
+  fields: DiscordEmbedField[];
+};
+
+type DiscordEmbedField = {
+  name: string;
+  value: string;
+  inline: boolean;
+};
 
 export class DiscordMail implements ClienteMail {
   private urlBase: string;
@@ -36,7 +59,11 @@ export class DiscordMail implements ClienteMail {
     }
   }
 
-  private crearRequest(destinatario: string, asunto: string, cuerpo: string) {
+  private crearRequest(
+    destinatario: string,
+    asunto: string,
+    cuerpo: string
+  ): DiscordMessage {
     return {
       embeds: [
         {
