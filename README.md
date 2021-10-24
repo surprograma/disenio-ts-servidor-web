@@ -107,7 +107,7 @@ Considerando todas las respuestas que hubo, se le tiene que poder preguntar:
 
 ## Requerimientos
 
-Se pide implementar la solución a este problema en Kotlin, junto con los tests que prueben cada uno de los requerimientos.
+Se pide implementar la solución a este problema en TypeScript, junto con los tests que prueben cada uno de los requerimientos.
 
 1. Implementar el servidor _sin módulos_, haciendo que devuelva 200 si el protocolo es el correcto, y 501 si no lo es.
 1. Incorporar los módulos.
